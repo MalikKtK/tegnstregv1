@@ -7,25 +7,25 @@
 <body>
 <canvas width="600" height="300"></canvas>
 <script>
-  const cx = document.querySelector("canvas").getContext("2d")
-  let red = 2
-  let green = 210
-  let blue = 51
-  function branch(length, angle, scale) {
-    //cx.fillStyle = "rgb(227,210,51)"
-    cx.fillStyle = `rgb(${red},${green},${blue})`
-    cx.fillRect(0, 0, 2, length)
-    if (length<8) return
-    cx.save()
-    cx.translate(0,length)
-    cx.rotate(-angle)
-    branch(length*scale, angle, scale)
-    cx.rotate(2*angle)
-    branch(length*scale, angle, scale)
-    cx.restore()
-  }
-  cx.translate(200,0)
-  branch(60, 0.5, 0.8)
+    const cx = document.querySelector("canvas").getContext("2d")
+    let red = 2
+    let green = 210
+    let blue = 51
+    function branch(length, angle, scale) {
+        //cx.fillStyle = "rgb(227,210,51)"
+        cx.fillStyle = `rgb(${red},${green},${blue})`
+        cx.fillRect(0, 0, 2, length)
+        if (length<8) return
+        cx.save()
+        cx.translate(0,length)
+        cx.rotate(-angle)
+        branch(length*scale, angle, scale)
+        cx.rotate(2*angle)
+        branch(length*scale, angle, scale)
+        cx.restore()
+    }
+    cx.translate(200,0)
+    branch(60, 0.5, 0.8)
 
 </script>
 </body>
